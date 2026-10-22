@@ -7,14 +7,18 @@ o VS Code e sincronizando as alterações com o GitHub.
 ------------------------------------------------------------------------
 
 PASSO 1: SINCRONIZAR E PREPARAR O REPOSITÓRIO NO VS CODE
-1. Abra a pasta do projeto 'PROJETO-MESAFARTAI' no seu VS Code.
-2. Abra o terminal integrado do VS Code
-3. Baixe as atualizações mais recentes do grupo no GitHub executando:
+1. Copie todas as instruções desta etapa no arquivos docs/regras.txt
+2. Abra o VS Code para a continuidade do desenvolvimento do seu projeto
+3. Habilite
+4. Abra a pasta do projeto 'PROJETO-MESAFARTAI' no VSCode: abra um terminal
+e digite: code .
+5. Baixe as atualizações mais recentes do grupo no GitHub executando:
    git pull origin main
-ATENÇÃO: Se o projeto não estiver baixado para a máquina que você está é
+
+ATENÇÃO: Se o projeto não estiver baixado na máquina que você está é
 necessário voltar a aula 10 e refazer a etapa de clonar projeto.
 
-4. Certifique-se de que as dependências do projeto estão instaladas:
+6. Certifique-se de que as dependências do projeto estão instaladas:
    pip install -r requirements.txt
 
 

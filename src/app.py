@@ -13,6 +13,8 @@ st.set_page_config(
 )
 
 # Inicializar instâncias dos motores
+
+
 nlu = MotorNLU()
 extrator = ExtratorEntidades()
 matchmaker = MotorMatchmaking()

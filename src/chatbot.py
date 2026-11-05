@@ -1,5 +1,5 @@
 """
-chatbot.py - Lógica da conversa do MESAFARTAI (sem nenhuma dependência do Streamlit).
+chatbot.py - Lógica da conversa do MESAFARTAI
 
 A conversa é uma MÁQUINA DE ESTADOS. Cada etapa sabe o que o bot acabou de perguntar.
 

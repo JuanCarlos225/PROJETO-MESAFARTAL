@@ -1,17 +1,7 @@
 """
 chatbot.py - Lógica da conversa do MESAFARTAI (sem nenhuma dependência do Streamlit).
 
-A conversa é uma MÁQUINA DE ESTADOS. Cada etapa sabe o que o bot acabou de perguntar:
-
-    inicio ──(quer doar)──> coletando ──> categoria ──> validade ──> confirmando_local ──> consentimento
-       │                        ▲  (pergunta o que falta: itens, nome, e-mail, localização)       │
-       │                        └──────────── dados incompletos ◄──────────────────────────────┘
-       │                                                                                          ▼
-       ├──(protocolo)──> protocolo                                              registra a doação + 1ª opção
-       └── saudação / fora de escopo / fallback                                                   │
-                                                                                                  ▼
-                                                          oferta ──(aceita)──> fim
-                                                            └──(recusa 1ª)──> 2ª opção ──> aceita / recusa ──> fim
+A conversa é uma MÁQUINA DE ESTADOS. Cada etapa sabe o que o bot acabou de perguntar.
 
 Regras de ouro:
   * o classificador de intenção (NLU) só decide o rumo no ESTADO "inicio". Quando o bot acabou de

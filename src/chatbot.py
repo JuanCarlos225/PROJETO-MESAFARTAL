@@ -167,7 +167,7 @@ class Conversa:
         if self.etapa != "inicio" and _RE_CANCELAR.match(texto):
             self._zerar_fluxo()
             self._dizer("Tudo bem, cancelei este atendimento. Nenhum dado foi salvo. "
-                        "Quando quiser, me diga o que deseja doar. 😊")
+                        "Quando quiser, me diga o que deseja doar.")
             return
         getattr(self, f"_etapa_{self.etapa}")(texto)
 
@@ -251,7 +251,7 @@ class Conversa:
                 self.dados.pop("endereco_texto", None)
         self.dados = self.ex.mesclar(self.dados, novo)
         if not entendeu:
-            self._dizer("Hmm, não consegui entender essa resposta. 😕")
+            self._dizer("Hmm, não consegui entender essa resposta.")
         self._avancar()
 
     # --- etapa: categoria (alimento fora do dicionário) --------------------------------------------------
@@ -303,7 +303,7 @@ class Conversa:
         else:
             self._zerar_fluxo()
             self._dizer("Tudo bem! Sem a sua autorização eu não registro nada, e **nenhum dado foi salvo**. "
-                        "Se mudar de ideia, é só me chamar. 🙂")
+                        "Se mudar de ideia, é só me chamar.")
 
     # --- etapa: oferta ------------------------------------------------------------------------------------------------
     def _etapa_oferta(self, texto):
@@ -360,7 +360,7 @@ class Conversa:
             d.pop("cep", None)
             d.pop("endereco_texto", None)
             self.campo, self.etapa = "localizacao", "coletando"
-            self._dizer("Não consegui localizar esse CEP/endereço. 😕 Confira e informe novamente o **CEP** "
+            self._dizer("Não consegui localizar esse CEP/endereço. Confira e informe novamente o **CEP** "
                         "(ou o endereço completo, com cidade).")
             return
         self.geo = achado
@@ -405,14 +405,14 @@ class Conversa:
                 else "A **segunda opção** (a última que posso oferecer) é:"
             rodape = "Você aceita esta ONG?" if r["ordem"] == 2 or not r["ha_segunda_opcao"] \
                 else "Você aceita esta ONG ou prefere ver a **segunda opção**?"
-            self._dizer(f"{titulo}\n\n{formatar_ong(r['ong'])}  \n🚗 A cerca de **{km(r['distancia_km'])}** de você.\n\n{rodape}")
+            self._dizer(f"{titulo}\n\n{formatar_ong(r['ong'])}  \n A cerca de **{km(r['distancia_km'])}** de você.\n\n{rodape}")
         else:
             motivo = r.get("motivo")
             self._dizer("Infelizmente, no momento **não há ONG compatível** com esta doação "
                         "(por localização ou restrições de alimentos). A sua doação ficou registrada como "
                         f"*sem destino* com o protocolo **{self.protocolo}**." if motivo == "sem_ong_compativel"
                         else "Não há uma segunda ONG compatível para sugerir. A doação ficou registrada como "
-                             f"*sem destino* com o protocolo **{self.protocolo}**. Obrigado por querer ajudar! 💚")
+                             f"*sem destino* com o protocolo **{self.protocolo}**. Obrigado por querer ajudar!")
             self._zerar_fluxo()
 
     def responder_oferta(self, aceito):
@@ -421,9 +421,9 @@ class Conversa:
         db.responder_match(oferta["match_id"], aceito)
         protocolo = self.protocolo
         if aceito:
-            self._dizer("🎉 **Combinado!** Entre em contato com a ONG para combinar a entrega:\n\n"
+            self._dizer(" **Combinado!** Entre em contato com a ONG para combinar a entrega:\n\n"
                         f"{formatar_ong(oferta['ong'])}\n\nProtocolo: **{protocolo}**. Muito obrigado por ajudar "
-                        "a combater a fome! 💚")
+                        "a combater a fome!")
             self._zerar_fluxo()
         elif oferta["ordem"] == 1:
             self._apresentar(self.motor.oferecer_proxima_opcao(self.doacao_id))

@@ -2,14 +2,14 @@
 app.py - Interface Streamlit do MESAFARTAI.
 
     ÁREA PÚBLICA (sem login)                      ÁREA ADMINISTRATIVA (login + senha)
-    ├─ 💬 Quero doar (chatbot)                    ├─ 📊 Dashboard
-    ├─ 🔎 Acompanhar doação (protocolo)           ├─ 🏢 ONGs (cadastrar, editar, desativar)
-    └─ ℹ️ Como funciona                           └─ 📋 Doações (registro, detalhes, exportar)
+    ├─ Quero doar (chatbot)                    ├─ Dashboard
+    ├─ Acompanhar doação (protocolo)           ├─ ONGs (cadastrar, editar, desativar)
+    └─ Como funciona                           └─ Doações (registro, detalhes, exportar)
 
-Este arquivo só cuida da TELA. As regras ficam nos módulos:
+Este arquivo é só front-end. As regras ficam nos módulos:
     chatbot.py (conversa) · nlu.py · entities.py · matchmaking.py · geocoding.py · database.py · auth.py
 
-Rodar:   streamlit run src/app.py
+Para rodar:   streamlit run src/app.py
 """
 import os
 from datetime import timedelta
@@ -75,7 +75,7 @@ def mostrar_flash():
 
 
 # ============================================================================
-# 💬 Chat do doador
+# Chat do doador
 # ============================================================================
 def pagina_doar(s):
     _, centro, _ = st.columns([1, 3, 1])
@@ -114,7 +114,7 @@ def enviar(conversa, texto):
 
 
 # ============================================================================
-# 🔎 Acompanhar doação
+# Acompanhar doação
 # ============================================================================
 def pagina_consulta():
     _, centro, _ = st.columns([1, 2, 1])
@@ -133,7 +133,7 @@ def pagina_consulta():
 
 
 # ============================================================================
-# ℹ️ Como funciona
+# Como funciona
 # ============================================================================
 def pagina_sobre():
     _, centro, _ = st.columns([1, 2, 1])
@@ -167,7 +167,7 @@ administração. A consulta por protocolo **não mostra** seus dados pessoais.
 
 
 # ============================================================================
-# 🔐 Administração
+# Administração
 # ============================================================================
 def pagina_admin(s):
     if not st.session_state.get("admin_ok"):
@@ -217,7 +217,7 @@ def tela_login(s):
 
 
 # ---------------------------------------------------------------------------
-# 📊 Dashboard
+# Dashboard
 # ---------------------------------------------------------------------------
 def _para_local(serie_utc):
     dt = pd.to_datetime(serie_utc, utc=True)
@@ -341,7 +341,7 @@ def mapa_ongs(ongs_ativas, doacoes):
 
 
 # ---------------------------------------------------------------------------
-# 🏢 ONGs
+# ONGs
 # ---------------------------------------------------------------------------
 def aba_gestao_ongs(s):
     sub_lista, sub_nova, sub_editar = st.tabs(["📋 Cadastradas", "➕ Cadastrar ONG", "✏️ Editar / desativar"])
@@ -479,7 +479,7 @@ def formulario_ong(s, modo, ong=None):
 
 
 # ---------------------------------------------------------------------------
-# 📋 Doações
+# Doações
 # ---------------------------------------------------------------------------
 def aba_registro_doacoes():
     doacoes = pd.DataFrame(db.listar_doacoes())

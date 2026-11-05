@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 MESAFARTAI - REGLAS Y REQUISITOS DE LA ETAPA 1 (Aula 08/10)
 Valor: 0,25 punto en la AC-3
 
@@ -37,3 +38,26 @@ Objetivo de la etapa: establecer los cimientos de ingeniería, base de datos y d
 
 7. REGLA IMPORTANTE
    - Solo hay validez y nota si la actividad se realiza en el salón de clases. No se aceptan entregas online ni actividades hechas en casa.
+=======
+REGLAS Y REQUISITOS DE LA ETAPA 1 (CLASE 08/10) - PROYECTO MESAFARTAI
+
+1. ESTRUCTURA Y ORGANIZACIÓN DEL REPOSICIONATORIO:
+- El repositorio en GitHub debe ser PÚBLICO.
+- El nombre exacto del repositorio debe ser: PROJETO-MESAFARTAI.
+- Todos los integrantes del equipo (3 a 5 alumnos) y el profesor deben ser agregados como colaboradores.
+
+2. DOCUMENTACIÓN OBLIGATORIA DE LA ETAPA:
+- README.md (en la raíz del proyecto) que contenga:
+  * Título oficial: MESAFARTAI – Logística e Inteligencia Assistiva no Combate à Fome
+  * Resumen de la solución y alineación con el ODS 2 de la ONU (Hambre Cero y Agricultura Sostenible).
+  * Nombre completo y número de identificación (RA) de cada integrante.
+- Carpeta /docs que contenga:
+  * docs/regras.txt: Descripción completa de las reglas y requisitos solicitados en la etapa 1.
+  * docs/escopo_projeto.md: Problema de negocio, público objetivo (Donantes vs. ONGs), intenciones tratadas y datos recolectados en el chat.
+  * docs/arquitetura_mesafartai.png: Diagrama de arquitectura en capas.
+  * docs/diag_fluxo_mesafartai.png: Diagrama de flujo de datos simplificado.
+
+3. BASE DE DATOS E INFRAESTRUCTURA:
+- Creación y carga inicial de la base de datos local utilizando SQLite3 para el almacenamiento de donantes, receptores (ONGs), donaciones e historial.
+- Todo el proyecto debe ser desarrollado 100% en Python.
+>>>>>>> e34e7ef26d5fb65a9bb1921792f9d121a7cd7e2e

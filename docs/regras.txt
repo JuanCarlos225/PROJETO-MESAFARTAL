@@ -1,0 +1,39 @@
+MESAFARTAI - REGLAS Y REQUISITOS DE LA ETAPA 1 (Aula 08/10)
+Valor: 0,25 punto en la AC-3
+
+Objetivo de la etapa: establecer los cimientos de ingeniería, base de datos y documentación del producto.
+
+1. ORGANIZACIÓN DEL GRUPO Y REPOSITORIO
+   - Formar un grupo de 3 a 5 alumnos.
+   - Crear un repositorio PÚBLICO en GitHub con el nombre exacto: PROJETO-MESAFARTAI
+   - Agregar a todos los integrantes como colaboradores, y también al profesor.
+
+2. README.md Y CARPETA /docs
+   - README.md en la raíz con: título oficial (MESAFARTAI – Logística e Inteligência Assistiva no Combate à Fome), descripción resumida de la solución y su alineación con la ODS 2 de la ONU, y nombre completo y RA de cada integrante.
+   - Carpeta /docs con el archivo docs/regras.txt (este documento) describiendo lo solicitado en la etapa 1.
+   - Archivo docs/escopo_projeto.md con: problema de negocio, público objetivo (Donadores vs. ONGs), alcance de las intenciones tratadas y datos recolectados en el chat.
+
+3. IDENTIDAD VISUAL Y LOGOTIPO CON IA
+   - Redactar un prompt creativo y usar un generador de imágenes por IA para crear el logotipo.
+   - El logo debe unir los conceptos de alimento/acogida y tecnología/IA asistiva.
+   - Guardar la imagen en assets/logo_mesafartai.png.
+   - Registrar el prompt exacto utilizado dentro de docs/escopo_projeto.md.
+
+4. SCRIPT DE BASE DE DATOS (src/database.py)
+   - Script en Python que inicializa la base de datos SQLite3 (mesafartai.db) con las tablas usuarios, donaciones y asignaciones, y la puebla con datos de prueba.
+
+5. DIAGRAMAS OBLIGATORIOS EN /docs
+   - arquitetura_mesafartai.png
+   - diag_fluxo_mesafartai.png
+
+6. CHECKLIST DE ENTREGA
+   - Repositorio PROJETO-MESAFARTAI creado y público.
+   - README.md con descripción, ODS 2 e integrantes.
+   - Carpeta /docs con regras.txt y escopo_projeto.md (con el prompt de IA incluido).
+   - Carpeta /src con database.py ejecutado sin errores, generando mesafartai.db.
+   - Correo al profesor antes de terminar la clase:
+       Asunto: [MESAFARTAI] - Nombre del Grupo - Turma Terça
+       Cuerpo: lista de integrantes (Nombre + RGM + Curso) + enlace directo al repositorio.
+
+7. REGLA IMPORTANTE
+   - Solo hay validez y nota si la actividad se realiza en el salón de clases. No se aceptan entregas online ni actividades hechas en casa.

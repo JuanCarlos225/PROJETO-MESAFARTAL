@@ -1,0 +1,4 @@
+fotos/
+__pycache__/
+*.pyc
+mesafartai.db
